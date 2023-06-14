@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 03 - Lisandro Hernández</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <h2>ESTUDIANTE</h2>
+    <form id="alumnoForm">
+      <label for="cedula">Cédula de Identidad:</label>
+      <input type="text" id="cedula" required />
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required />
+      <label for="matematica">Nota de Matemática:</label>
+      <input type="number" id="matematica" required />
+      <label for="fisica">Nota de Física:</label>
+      <input type="number" id="fisica" required />
+      <label for="programacion">Nota de Programación:</label>
+      <input type="number" id="programacion" required />
+      <input type="submit" value="Agregar Alumno" />
+    </form>
+
+    <hr />
+
+    <h3>Estadísticas del Estudiante</h3>
+    <table>
+      <tr>
+        <th>Materia</th>
+        <th>Promedio de Materia</th>
+        <th>Estudiantes Aprobados</th>
+        <th>Estudiantes Reprobados</th>
+        <th>Total</th>
+      </tr>
+      <tr id="matematicaRow">
+        <td>Matemática</td>
+        <td class="promedio" id="matematicaPromedio"></td>
+        <td class="aprobados" id="matematicaAprobados"></td>
+        <td class="reprobados" id="matematicaReprobados"></td>
+        <td class="total" id="matematicaTotal"></td>
+      </tr>
+      <tr id="fisicaRow">
+        <td>Física</td>
+        <td class="promedio" id="fisicaPromedio"></td>
+        <td class="aprobados" id="fisicaAprobados"></td>
+        <td class="reprobados" id="fisicaReprobados"></td>
+        <td class="total" id="fisicaTotal"></td>
+      </tr>
+      <tr id="programacionRow">
+        <td>Programación</td>
+        <td class="promedio" id="programacionPromedio"></td>
+        <td class="aprobados" id="programacionAprobados"></td>
+        <td class="reprobados" id="programacionReprobados"></td>
+        <td class="total" id="programacionTotal"></td>
+      </tr>
+      <tr>
+        <td colspan="5" id="aprobadosTodas"></td>
+      </tr>
+      <tr>
+        <td colspan="5" id="aprobadosDos"></td>
+      </tr>
+      <tr>
+        <td colspan="5" id="aprobadosUna"></td>
+      </tr>
+      <tr>
+        <td colspan="5" id="maximaNota"></td>
+      </tr>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
