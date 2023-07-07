@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins';
+  margin: 0;
+  padding: 20px;
+  background-color: rgb(255, 255, 253);
+}
+
+#header {
+    background-color: #1abc9c;
+    height: 150px;
+    line-height: 150px;
+    color: rgb(255, 255, 253);
+  }
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color:  #1abc9c;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  background-color:  #1abc9c;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: #888;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="time"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="date"]:focus {
+  border-color: rgb(81, 208, 165);
+  outline: none;
+}
+
+button {
+  background-color:  #1abc9c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Poppins';
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(15, 162, 113);
+  transform: scale(1.05);
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.editButton,
+.deleteButton {
+  background-color:  #1abc9c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  background-color: rgb(69, 183, 145);;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fadeIn {
+  animation: fadeIn 0.3s ease;
+}
