@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Función para cargar las actividades desde la API
     function loadActivities() {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "http://165.22.0.205/api/activities", true);
+  xhr.open("GET", "https://lisandrohr.com/api/activities", true);
   xhr.onload = function() {
     if (xhr.status === 200) {
       activities = JSON.parse(xhr.responseText);
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Función para guardar una nueva actividad en la API
 function addActivity(activity, time, date) {
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", `http://165.22.0.205/api/activities/`, true);
+  xhr.open("POST", `https://lisandrohr.com/api/activities/`, true);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onload = function() {
     if (xhr.status === 200) {
@@ -64,7 +64,7 @@ function addActivity(activity, time, date) {
 // Función para actualizar una actividad existente en la API
 function updateActivity(activity, time, date, id) {
   const xhr = new XMLHttpRequest();
-  xhr.open("PUT", `http://165.22.0.205/api/activities/${id}`, true);
+  xhr.open("PUT", `https://lisandrohr.com/api/activities/${id}`, true);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onload = function() {
     if (xhr.status === 200) {
@@ -79,7 +79,7 @@ function updateActivity(activity, time, date, id) {
 // Función para eliminar una actividad de la API
 function deleteActivity(id) {
   const xhr = new XMLHttpRequest();
-  xhr.open("DELETE", `http://165.22.0.205/api/activities/${id}`, true);
+  xhr.open("DELETE", `https://lisandrohr.com/api/activities/${id}`, true);
   xhr.onload = function() {
     if (xhr.status === 200) {
       loadActivities(); // Recargar las actividades después de eliminar
