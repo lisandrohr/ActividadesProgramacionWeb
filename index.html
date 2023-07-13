@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://unpkg.com/unfetch/dist/unfetch.umd.js"></script>
 <head>
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>Registro de Actividades Diarias</title>
-  <script src="script1.js"></script>
+  <title>John De & Doe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://unpkg.com/unfetch/dist/unfetch.umd.js"></script>
+  <script src="script1.js"></script>
 </head>
-<body>
-    <div id="header">
-    <h1>Registro de Actividades Diarias</h1>
-    </div>
-    <br>
-  <form id="activityForm">
-    <label for="activity">Actividad:</label>
-    <input type="text" id="activity" required>
-    <label for="time">Hora y Minuto:</label>
-    <input type="time" id="time" required>
-    <label for="date">Fecha:</label>
-    <input type="date" id="date" required>
-    <button type="submit">Agregar</button>
-  </form>
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
 
-  <h2>Actividades</h2>
-  <ul id="activityList"></ul>
+<body>
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2>John De & Doe - Taller de Vehículos</h2>
+      <p class="lead">Registra aquí los mantenimientos preventivos y correctivos de los vehículos.</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="mb-3">Información del Vehículo</h4>
+        <form id="vehicleForm" class="needs-validation" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="owner"><i class="fas fa-user"></i> Nombre del Propietario</label>
+              <input type="text" class="form-control" id="owner" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="vehicle"><i class="fas fa-car"></i> Nombre del Vehículo</label>
+              <input type="text" class="form-control" id="vehicle" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="maintenance"><i class="fas fa-wrench"></i> Mantenimiento</label>
+            <select class="custom-select d-block w-100" id="maintenance" required>
+              <option value="">Seleccione...</option>
+              <option>Preventivo</option>
+              <option>Correctivo</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Agregar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h4 class="mb-3">Vehículos Registrados</h4>
+        <ul id="vehicleList" class="list-group"></ul>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

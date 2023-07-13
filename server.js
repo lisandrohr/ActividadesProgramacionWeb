@@ -5,72 +5,58 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-let activities = [];
+let vehicles = [];
 
-// Obtener todas las actividades
-app.get('/api/activities', (req, res) => {
-  res.json(activities);
+app.get('/api/vehicles', (req, res) => {
+  res.json(vehicles);
 });
 
-// Agregar una nueva actividad
-app.post('/api/activities/', (req, res) => {
-  const activity = req.body;
-  activity.id = generateId()
-  activities.push(activity);
+app.post('/api/vehicles/', (req, res) => {
+  const vehicle = req.body;
+  vehicle.id = generateId()
+  vehicles.push(vehicle);
   res.sendStatus(200);
 });
 
 function generateId() {
-  const ids = activities.map(activity => activity.id);
+  const ids = vehicles.map(vehicle => vehicle.id);
   return ids.length > 0 ? Math.max(...ids) + 1 : 1;
 }
 
-
-// Obtener una actividad por ID
-app.get('/api/activities/:id', (req, res) => {
+app.get('/api/vehicles/:id', (req, res) => {
   const id = req.params.id;
-  const activity = activities.find(activity => activity.id === id);
-  if (activity) {
-    res.json(activity);
+  const vehicle = vehicles.find(vehicle => vehicle.id === id);
+  if (vehicle) {
+    res.json(vehicle);
   } else {
     res.sendStatus(404);
   }
 });
 
-// Actualizar una actividad existente
-app.put('/api/activities/:id', (req, res) => {
-  console.log('id',req.params.id);
+app.put('/api/vehicles/:id', (req, res) => {
   const id = req.params.id;
-  const updatedActivity = req.body; // No es necesario obtener solo el ID
+  const updatedVehicle = req.body;
 
-
-  const index = activities.findIndex(activity => activity.id == id);
-  console.log('index', index);
-  console.log('activities', activities);
+  const index = vehicles.findIndex(vehicle => vehicle.id == id);
   if (index !== -1) {
-    activities[index] = updatedActivity;
+    vehicles[index] = updatedVehicle;
     res.sendStatus(200);
   } else {
     res.sendStatus(404);
   }
 });
 
-// Eliminar una actividad
-app.delete('/api/activities/:id', (req, res) => {
-  console.log('id',req.params.id);
+app.delete('/api/vehicles/:id', (req, res) => {
   const id = req.params.id;
-  const index = activities.findIndex(activity => activity.id == id);
-  console.log('id',id);
-  console.log('index',index);
+  const index = vehicles.findIndex(vehicle => vehicle.id == id);
   if (index !== -1) {
-    activities.splice(index, 1);
+    vehicles.splice(index, 1);
     res.sendStatus(200);
   } else {
     res.sendStatus(404);
   }
 });
 
-// Iniciar el servidor
 const port = 3000;
 app.listen(port, () => {
   console.log(`Servidor API escuchando en http://localhost:${port}`);
